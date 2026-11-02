@@ -1,0 +1,199 @@
+2026-11-01 18:23:30,317 | INFO    | grain.db | Database pool created (root@localhost/grain_inventory)
+2026-11-01 18:23:30,916 | WARNING | grain.api | Created default accounts owner/admin123 and cashier1/cash123 - CHANGE THESE PASSWORDS after first login.
+2026-11-01 18:23:30,917 | INFO    | grain.api | Starting API on 0.0.0.0:5000
+2026-11-01 18:23:31,018 | INFO    | waitress | Serving on http://0.0.0.0:5000
+2026-11-01 18:25:44,910 | INFO    | grain.api | [809212a4] GET /api/health -> 200 (2 ms) user=-
+2026-11-01 18:25:57,901 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-01 18:25:57,940 | INFO    | grain.api | [4afd744f] POST /api/login -> 200 (239 ms) user=owner
+2026-11-01 18:26:01,473 | INFO    | grain.api | [bd3d18f0] GET /api/analytics -> 200 (247 ms) user=owner
+2026-11-01 18:26:21,983 | INFO    | grain.api | [05c21bc8] GET /api/analytics -> 200 (34 ms) user=owner
+2026-11-01 18:26:29,602 | INFO    | grain.api | [41dae8fe] GET /api/orders -> 200 (35 ms) user=owner
+2026-11-01 18:26:36,095 | INFO    | grain.api | [25e28832] GET /api/orders/564 -> 200 (6 ms) user=owner
+2026-11-01 18:27:02,688 | INFO    | grain.api | [c3b347e6] GET /api/inventory -> 200 (60 ms) user=owner
+2026-11-01 18:27:19,638 | INFO    | grain.api | [0b86d899] GET /api/catalog -> 200 (9 ms) user=owner
+2026-11-01 18:28:01,032 | INFO    | grain.api | [666919fc] GET /api/catalog -> 200 (12 ms) user=owner
+2026-11-01 18:28:31,483 | INFO    | grain.api | [a7132aa7] GET /api/catalog -> 200 (7 ms) user=owner
+2026-11-01 18:28:31,495 | INFO    | grain.api | [7aa26e3a] GET /api/inventory -> 200 (7 ms) user=owner
+2026-11-01 18:28:42,627 | INFO    | grain.api | [059096af] GET /api/users -> 200 (3 ms) user=owner
+2026-11-01 18:29:08,707 | INFO    | grain.api | [b24d689c] GET /api/audit-log -> 200 (4 ms) user=owner
+2026-11-01 18:29:14,911 | INFO    | grain.api | [d059b15d] GET /api/analytics -> 200 (74 ms) user=owner
+2026-11-01 18:29:16,660 | INFO    | grain.api | [98390e49] GET /api/inventory -> 200 (8 ms) user=owner
+2026-11-01 18:29:37,164 | INFO    | grain.api | [45289d91] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-01 18:30:01,503 | INFO    | grain.api | [3df870cf] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-01 18:30:23,428 | INFO    | grain.api | [f21cf803] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-01 18:30:45,683 | INFO    | grain.api | [00b7c29c] GET /api/inventory -> 200 (8 ms) user=owner
+2026-11-01 18:31:08,001 | INFO    | grain.api | [9558294a] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-01 18:31:09,821 | INFO    | grain.api | AUDIT BILL_CREATED | user=owner | GB-20261101-00565 total=952.00 items=2 payment=UPI
+2026-11-01 18:31:09,848 | INFO    | grain.api | [46f2cd8a] POST /api/orders -> 201 (42 ms) user=owner
+2026-11-01 18:31:09,929 | INFO    | grain.api | [bdd01fbc] GET /api/inventory -> 200 (4 ms) user=owner
+2026-11-01 18:32:57,477 | INFO    | grain.api | [aef9da31] GET /api/analytics -> 200 (53 ms) user=owner
+2026-11-01 18:33:21,447 | INFO    | grain.api | [2548137c] GET /api/orders -> 200 (29 ms) user=owner
+2026-11-01 23:20:58,816 | INFO    | grain.db | Database pool created (root@localhost/grain_inventory)
+2026-11-01 23:20:58,833 | INFO    | grain.api | Starting API on 0.0.0.0:5000
+2026-11-01 23:21:40,518 | INFO    | grain.api | [741cbfd7] GET /api/health -> 200 (7 ms) user=-
+2026-11-01 23:21:54,062 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-01 23:21:54,085 | INFO    | grain.api | [f7772a4f] POST /api/login -> 200 (379 ms) user=owner
+2026-11-01 23:22:11,020 | INFO    | grain.api | [1949455a] GET /api/inventory -> 200 (144 ms) user=owner
+2026-11-01 23:22:12,203 | INFO    | grain.api | [69854384] GET /api/analytics -> 200 (278 ms) user=owner
+2026-11-01 23:22:14,397 | INFO    | grain.api | [9286a888] GET /api/analytics -> 200 (128 ms) user=owner
+2026-11-01 23:22:16,510 | INFO    | grain.api | [99b85fe5] GET /api/inventory -> 200 (75 ms) user=owner
+2026-11-01 23:23:01,413 | INFO    | grain.api | [b6396dce] GET /api/analytics -> 200 (62 ms) user=owner
+2026-11-01 23:23:45,347 | INFO    | grain.api | [b1e87103] GET /api/analytics -> 200 (299 ms) user=owner
+2026-11-01 23:23:53,282 | INFO    | grain.api | [94783f35] GET /api/analytics -> 200 (56 ms) user=owner
+2026-11-01 23:23:59,632 | INFO    | grain.api | [3882ad46] GET /api/inventory -> 200 (37 ms) user=owner
+2026-11-01 23:24:22,133 | INFO    | grain.api | [af793b78] GET /api/inventory -> 200 (57 ms) user=owner
+2026-11-01 23:24:48,706 | INFO    | grain.api | [43fa92a0] GET /api/orders -> 200 (39 ms) user=owner
+2026-11-01 23:24:55,137 | INFO    | grain.api | [4f4b8425] GET /api/orders/565 -> 200 (65 ms) user=owner
+2026-11-01 23:25:04,710 | INFO    | grain.api | [1cf7761f] GET /api/inventory -> 200 (26 ms) user=owner
+2026-11-01 23:25:10,098 | INFO    | grain.api | [3f1e68f6] GET /api/customers -> 200 (49 ms) user=owner
+2026-11-01 23:25:40,273 | INFO    | grain.api | [06851a25] GET /api/inventory -> 200 (69 ms) user=owner
+2026-11-01 23:25:42,389 | INFO    | grain.api | [df290073] GET /api/customers -> 200 (35 ms) user=owner
+2026-11-01 23:26:32,251 | INFO    | grain.api | [5f2008d0] GET /api/inventory -> 200 (102 ms) user=owner
+2026-11-01 23:26:34,396 | INFO    | grain.api | [d1e74236] GET /api/customers -> 200 (69 ms) user=owner
+2026-11-01 23:26:36,649 | INFO    | grain.api | AUDIT BILL_CREATED | user=owner | GB-20261101-00566 total=62.00 items=1 payment=Cash
+2026-11-01 23:26:36,688 | INFO    | grain.api | [5d64745f] POST /api/orders -> 201 (110 ms) user=owner
+2026-11-01 23:26:52,515 | INFO    | grain.api | [74662b6e] GET /api/orders/recent -> 200 (20 ms) user=owner
+2026-11-01 23:26:55,830 | INFO    | grain.api | [ed178496] GET /api/orders/recent -> 200 (49 ms) user=owner
+2026-11-01 23:27:02,865 | INFO    | grain.api | [4370d914] GET /api/orders/recent -> 200 (15 ms) user=owner
+2026-11-01 23:27:05,016 | INFO    | grain.api | [6d2394af] GET /api/orders/566 -> 200 (66 ms) user=owner
+2026-11-01 23:27:10,348 | INFO    | grain.api | [e2ef81af] GET /api/orders/recent -> 200 (15 ms) user=owner
+2026-11-01 23:27:12,443 | INFO    | grain.api | [b440092b] GET /api/orders/565 -> 200 (27 ms) user=owner
+2026-11-01 23:27:22,600 | INFO    | grain.api | [13ecf5f5] GET /api/inventory -> 200 (16 ms) user=owner
+2026-11-01 23:27:24,805 | INFO    | grain.api | [c16af82d] GET /api/orders/recent -> 200 (13 ms) user=owner
+2026-11-01 23:30:27,640 | INFO    | grain.api | [4d361438] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-01 23:30:29,792 | INFO    | grain.api | [aa3fc98e] GET /api/orders/recent -> 200 (14 ms) user=owner
+2026-11-01 23:30:31,892 | INFO    | grain.api | [18a68763] GET /api/orders/565 -> 200 (37 ms) user=owner
+2026-11-01 23:30:45,483 | INFO    | grain.api | [e963b2aa] GET /api/orders/recent -> 200 (16 ms) user=owner
+2026-11-01 23:30:52,171 | INFO    | grain.api | [aa000b09] GET /api/inventory -> 200 (8 ms) user=owner
+2026-11-01 23:31:20,785 | INFO    | grain.api | [19661c77] GET /api/inventory -> 200 (32 ms) user=owner
+2026-11-01 23:32:22,904 | INFO    | grain.api | [23c47bce] GET /api/inventory -> 200 (15 ms) user=owner
+2026-11-01 23:33:37,434 | INFO    | grain.api | AUDIT LOGIN | user=cashier1 | role=cashier
+2026-11-01 23:33:37,447 | INFO    | grain.api | [2aaef3ba] POST /api/login -> 200 (283 ms) user=cashier1
+2026-11-01 23:33:39,570 | INFO    | grain.api | [8c80c41d] GET /api/inventory -> 200 (20 ms) user=cashier1
+2026-11-01 23:33:57,833 | INFO    | grain.api | [c6aae9c7] GET /api/customers -> 200 (81 ms) user=cashier1
+2026-11-02 13:49:01,366 | INFO    | grain.db | Database pool created (root@localhost/grain_inventory)
+2026-11-02 13:49:01,384 | INFO    | grain.api | Starting API on 0.0.0.0:5000
+2026-11-02 13:49:01,431 | INFO    | waitress | Serving on http://0.0.0.0:5000
+2026-11-02 13:49:43,634 | INFO    | grain.api | [856caea2] GET /api/health -> 200 (14 ms) user=-
+2026-11-02 13:49:57,986 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-02 13:49:58,018 | INFO    | grain.api | [c66604fd] POST /api/login -> 200 (368 ms) user=owner
+2026-11-02 13:50:05,761 | INFO    | grain.api | [8a3a12ce] GET /api/analytics -> 200 (205 ms) user=owner
+2026-11-02 13:50:05,812 | INFO    | grain.api | [6dac9a21] GET /api/analytics -> 200 (46 ms) user=owner
+2026-11-02 13:50:05,836 | INFO    | grain.api | [e3d32ac4] GET /api/inventory -> 200 (20 ms) user=owner
+2026-11-02 13:50:29,423 | INFO    | grain.api | [fa9e962d] GET /api/analytics -> 200 (38 ms) user=owner
+2026-11-02 13:50:35,378 | INFO    | grain.api | [7f7bedba] GET /api/analytics -> 200 (79 ms) user=owner
+2026-11-02 13:51:06,827 | INFO    | grain.api | [10b4355d] GET /api/analytics -> 200 (78 ms) user=owner
+2026-11-02 13:51:11,781 | INFO    | grain.api | [eadecbe0] GET /api/inventory -> 200 (25 ms) user=owner
+2026-11-02 13:51:18,432 | INFO    | grain.api | [8499a582] GET /api/orders -> 200 (16 ms) user=owner
+2026-11-02 13:51:27,142 | INFO    | grain.api | [9a5adae4] GET /api/catalog -> 200 (12 ms) user=owner
+2026-11-02 13:51:30,223 | INFO    | grain.api | [544d5368] GET /api/users -> 200 (10 ms) user=owner
+2026-11-02 13:51:43,216 | INFO    | grain.api | [5d1b9745] GET /api/audit-log -> 200 (29 ms) user=owner
+2026-11-02 13:51:56,249 | INFO    | grain.api | [73e525f8] GET /api/stock/log -> 200 (28 ms) user=owner
+2026-11-02 13:52:01,144 | INFO    | grain.api | [06157519] GET /api/inventory -> 200 (21 ms) user=owner
+2026-11-02 13:52:07,022 | INFO    | grain.api | [5b43e974] GET /api/customers -> 200 (6 ms) user=owner
+2026-11-02 13:52:37,765 | INFO    | grain.api | [dd7917ad] GET /api/inventory -> 200 (65 ms) user=owner
+2026-11-02 13:52:37,939 | INFO    | grain.api | AUDIT BILL_CREATED | user=owner | GB-20261102-00567 total=182.00 items=2 payment=Cash
+2026-11-02 13:52:37,955 | INFO    | grain.api | [4560f800] POST /api/orders -> 201 (94 ms) user=owner
+2026-11-02 13:53:33,197 | INFO    | grain.api | [77ca9e6c] GET /api/analytics -> 200 (48 ms) user=owner
+2026-11-02 13:53:33,276 | INFO    | grain.api | [fcf0219c] GET /api/analytics -> 200 (43 ms) user=owner
+2026-11-02 13:53:33,311 | INFO    | grain.api | [3d56814b] GET /api/inventory -> 200 (6 ms) user=owner
+2026-11-02 16:54:03,455 | INFO    | grain.db | Database pool created (root@localhost/grain_inventory)
+2026-11-02 16:54:04,140 | WARNING | grain.api | Created default accounts owner/admin123 and cashier1/cash123 - CHANGE THESE PASSWORDS after first login.
+2026-11-02 16:54:04,141 | INFO    | grain.api | Starting API on 0.0.0.0:5000
+2026-11-02 16:54:04,277 | INFO    | waitress | Serving on http://0.0.0.0:5000
+2026-11-02 16:54:33,081 | INFO    | grain.api | [9862b37b] GET /api/health -> 200 (9 ms) user=-
+2026-11-02 16:54:48,272 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-02 16:54:48,296 | INFO    | grain.api | [5feddc82] POST /api/login -> 200 (366 ms) user=owner
+2026-11-02 16:54:52,635 | INFO    | grain.api | [a25a3c6d] GET /api/analytics -> 200 (135 ms) user=owner
+2026-11-02 16:54:52,683 | INFO    | grain.api | [dddae6e1] GET /api/analytics -> 200 (41 ms) user=owner
+2026-11-02 16:54:52,702 | INFO    | grain.api | [2aac7aef] GET /api/inventory -> 200 (15 ms) user=owner
+2026-11-02 16:54:57,183 | INFO    | grain.api | [9548fc81] GET /api/orders/recent -> 200 (6 ms) user=owner
+2026-11-02 16:54:57,202 | INFO    | grain.api | [6a7e546a] GET /api/inventory -> 200 (6 ms) user=owner
+2026-11-02 16:55:13,987 | INFO    | grain.api | [0741cae0] GET /api/analytics -> 200 (32 ms) user=owner
+2026-11-02 16:55:14,888 | INFO    | grain.api | [1532bdb6] GET /api/analytics -> 200 (52 ms) user=owner
+2026-11-02 16:55:15,817 | INFO    | grain.api | [b1f19437] GET /api/analytics -> 200 (51 ms) user=owner
+2026-11-02 16:55:16,510 | INFO    | grain.api | [53a60946] GET /api/analytics -> 200 (38 ms) user=owner
+2026-11-02 16:56:23,414 | INFO    | grain.api | [ac0f6000] GET /api/me -> 200 (2 ms) user=owner
+2026-11-02 16:56:23,459 | INFO    | grain.api | [79d6d1e3] GET /api/analytics -> 200 (32 ms) user=owner
+2026-11-02 16:56:23,544 | INFO    | grain.api | [8124b8e3] GET /api/analytics -> 200 (77 ms) user=owner
+2026-11-02 16:56:23,554 | INFO    | grain.api | [6bd73fe6] GET /api/inventory -> 200 (6 ms) user=owner
+2026-11-02 16:57:02,141 | INFO    | grain.api | [fc88495a] GET /api/analytics -> 200 (88 ms) user=owner
+2026-11-02 16:58:03,329 | INFO    | grain.api | [e65fc9a9] GET /api/audit-log -> 200 (54 ms) user=owner
+2026-11-02 16:58:09,534 | INFO    | grain.api | [530f3c19] GET /api/audit-log -> 200 (65 ms) user=owner
+2026-11-02 16:58:13,165 | INFO    | grain.api | [33246412] GET /api/stock/log -> 200 (8 ms) user=owner
+2026-11-02 16:58:15,521 | INFO    | grain.api | [d5fc60e6] GET /api/audit-log -> 200 (61 ms) user=owner
+2026-11-02 16:58:18,761 | INFO    | grain.api | [ef1a3bb5] GET /api/stock/log -> 200 (21 ms) user=owner
+2026-11-02 16:58:19,845 | INFO    | grain.api | [22243d17] GET /api/audit-log -> 200 (5 ms) user=owner
+2026-11-02 16:58:25,550 | INFO    | grain.api | [0999541d] GET /api/stock/log -> 200 (10 ms) user=owner
+2026-11-02 17:00:23,418 | INFO    | grain.api | [c5c59198] GET /api/me -> 200 (2 ms) user=owner
+2026-11-02 17:00:23,461 | INFO    | grain.api | [6bc8b516] GET /api/analytics -> 200 (33 ms) user=owner
+2026-11-02 17:00:23,501 | INFO    | grain.api | [eb106481] GET /api/analytics -> 200 (35 ms) user=owner
+2026-11-02 17:00:23,511 | INFO    | grain.api | [2e390a59] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-02 17:00:27,316 | INFO    | grain.api | AUDIT LOGOUT | user=owner | 
+2026-11-02 17:00:27,330 | INFO    | grain.api | [2f87770e] POST /api/logout -> 200 (17 ms) user=owner
+2026-11-02 17:00:27,536 | INFO    | grain.api | [ef701ea0] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:00:38,973 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-02 17:00:38,983 | INFO    | grain.api | [167216f5] POST /api/login -> 200 (279 ms) user=owner
+2026-11-02 17:00:39,184 | INFO    | grain.api | [408b467e] GET /api/analytics -> 200 (72 ms) user=owner
+2026-11-02 17:00:39,266 | INFO    | grain.api | [6cde35f5] GET /api/analytics -> 200 (74 ms) user=owner
+2026-11-02 17:00:39,284 | INFO    | grain.api | [62ddfca9] GET /api/inventory -> 200 (9 ms) user=owner
+2026-11-02 17:01:14,976 | INFO    | grain.api | [9f991f33] GET /api/analytics -> 200 (154 ms) user=owner
+2026-11-02 17:01:20,968 | INFO    | grain.api | [069df363] GET /api/inventory -> 200 (7 ms) user=owner
+2026-11-02 17:01:34,487 | INFO    | grain.api | [42b2d977] GET /api/orders -> 200 (12 ms) user=owner
+2026-11-02 17:01:48,584 | INFO    | grain.api | [7d7ae5f2] GET /api/catalog -> 200 (7 ms) user=owner
+2026-11-02 17:01:56,781 | INFO    | grain.api | [8823d13b] GET /api/users -> 200 (5 ms) user=owner
+2026-11-02 17:01:57,341 | INFO    | grain.api | [e1e8c1dd] GET /api/offers -> 200 (22 ms) user=owner
+2026-11-02 17:02:22,093 | INFO    | grain.api | [82d9f8d2] GET /api/offers -> 200 (42 ms) user=owner
+2026-11-02 17:02:30,237 | INFO    | grain.api | [46e2ea27] GET /api/offers -> 200 (10 ms) user=owner
+2026-11-02 17:02:32,542 | INFO    | grain.api | [fc531512] GET /api/offers -> 200 (202 ms) user=owner
+2026-11-02 17:02:42,237 | INFO    | grain.api | [f5879b84] GET /api/me -> 200 (3 ms) user=owner
+2026-11-02 17:02:42,284 | INFO    | grain.api | [9d9bc033] GET /api/analytics -> 200 (30 ms) user=owner
+2026-11-02 17:02:42,340 | INFO    | grain.api | [0ec1c69c] GET /api/analytics -> 200 (52 ms) user=owner
+2026-11-02 17:02:42,355 | INFO    | grain.api | [5ec233d8] GET /api/inventory -> 200 (5 ms) user=owner
+2026-11-02 17:02:47,061 | INFO    | grain.api | [d2a17d05] GET /api/catalog -> 200 (6 ms) user=owner
+2026-11-02 17:02:49,893 | INFO    | grain.api | [d4559edf] GET /api/offers -> 200 (92 ms) user=owner
+2026-11-02 17:02:51,756 | INFO    | grain.api | [05927b26] GET /api/users -> 200 (4 ms) user=owner
+2026-11-02 17:02:58,900 | INFO    | grain.api | [2cecf979] GET /api/offers -> 200 (7 ms) user=owner
+2026-11-02 17:04:12,602 | INFO    | grain.api | [0cb1104c] GET /api/audit-log -> 200 (7 ms) user=owner
+2026-11-02 17:06:42,998 | INFO    | grain.api | [1eea1474] GET /api/me -> 200 (5 ms) user=owner
+2026-11-02 17:06:43,206 | INFO    | grain.api | [850a0846] GET /api/analytics -> 200 (17 ms) user=owner
+2026-11-02 17:06:43,244 | INFO    | grain.api | [b97427b6] GET /api/analytics -> 200 (34 ms) user=owner
+2026-11-02 17:06:43,255 | INFO    | grain.api | [905215db] GET /api/inventory -> 200 (7 ms) user=owner
+2026-11-02 17:06:46,714 | INFO    | grain.api | AUDIT LOGOUT | user=owner | 
+2026-11-02 17:06:46,799 | INFO    | grain.api | [d75d78a8] POST /api/logout -> 200 (88 ms) user=owner
+2026-11-02 17:06:46,953 | INFO    | grain.api | [158805d8] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:07:38,520 | INFO    | grain.api | [42ac5b1f] GET /api/health -> 200 (1 ms) user=-
+2026-11-02 17:08:15,042 | INFO    | grain.api | AUDIT LOGIN_FAILED | user=cashier | username=cashier
+2026-11-02 17:08:15,058 | INFO    | grain.api | [16cd35df] POST /api/login -> 401 (83 ms) user=-
+2026-11-02 17:08:15,070 | INFO    | grain.api | [73c94e7d] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:08:57,963 | INFO    | grain.api | AUDIT LOGIN_FAILED | user=cashier | username=cashier
+2026-11-02 17:08:58,001 | INFO    | grain.api | [2d383a54] POST /api/login -> 401 (40 ms) user=-
+2026-11-02 17:08:58,019 | INFO    | grain.api | [fb2b7f14] GET /api/health -> 200 (3 ms) user=-
+2026-11-02 17:08:59,610 | INFO    | grain.api | AUDIT LOGIN_FAILED | user=cashier | username=cashier
+2026-11-02 17:08:59,643 | INFO    | grain.api | [735ac416] POST /api/login -> 401 (35 ms) user=-
+2026-11-02 17:09:07,458 | INFO    | grain.api | AUDIT LOGIN_FAILED | user=cashier | username=cashier
+2026-11-02 17:09:07,557 | INFO    | grain.api | [f5b1aaa6] POST /api/login -> 401 (101 ms) user=-
+2026-11-02 17:09:09,038 | INFO    | grain.api | AUDIT LOGIN_FAILED | user=cashier | username=cashier
+2026-11-02 17:09:09,080 | INFO    | grain.api | [f755c1a7] POST /api/login -> 401 (44 ms) user=-
+2026-11-02 17:09:09,086 | INFO    | grain.api | [46fe6239] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:09:32,351 | INFO    | grain.api | [0cf6a935] POST /api/login -> 429 (0 ms) user=-
+2026-11-02 17:09:32,360 | INFO    | grain.api | [199fc404] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:09:46,719 | INFO    | grain.api | AUDIT LOGIN | user=owner | role=owner
+2026-11-02 17:09:46,740 | INFO    | grain.api | [51743bc4] POST /api/login -> 200 (610 ms) user=owner
+2026-11-02 17:09:47,025 | INFO    | grain.api | [4ab5d945] GET /api/analytics -> 200 (51 ms) user=owner
+2026-11-02 17:09:47,112 | INFO    | grain.api | [53b9e573] GET /api/analytics -> 200 (80 ms) user=owner
+2026-11-02 17:09:47,460 | INFO    | grain.api | [a3d934f7] GET /api/inventory -> 200 (339 ms) user=owner
+2026-11-02 17:09:51,563 | INFO    | grain.api | AUDIT LOGOUT | user=owner | 
+2026-11-02 17:09:51,847 | INFO    | grain.api | [41ac1bf9] POST /api/logout -> 200 (286 ms) user=owner
+2026-11-02 17:09:52,104 | INFO    | grain.api | [6893d6cc] GET /api/health -> 200 (7 ms) user=-
+2026-11-02 17:10:03,649 | INFO    | grain.api | [e5088a55] POST /api/login -> 429 (0 ms) user=-
+2026-11-02 17:10:03,657 | INFO    | grain.api | [3a01054c] GET /api/health -> 200 (2 ms) user=-
+2026-11-02 17:10:34,121 | INFO    | grain.api | AUDIT LOGIN | user=cashier1 | role=cashier
+2026-11-02 17:10:34,139 | INFO    | grain.api | [f93f1c77] POST /api/login -> 200 (468 ms) user=cashier1
+2026-11-02 17:10:34,356 | INFO    | grain.api | [bfd4e8ca] GET /api/orders/recent -> 200 (4 ms) user=cashier1
+2026-11-02 17:10:34,375 | INFO    | grain.api | [4008593f] GET /api/inventory -> 200 (7 ms) user=cashier1
+2026-11-02 17:10:58,678 | INFO    | grain.api | [df115439] GET /api/orders/recent -> 200 (5 ms) user=cashier1
+2026-11-02 17:10:58,692 | INFO    | grain.api | [dcb46297] GET /api/inventory -> 200 (6 ms) user=cashier1
+2026-11-02 17:11:30,528 | INFO    | grain.api | [3512bdda] GET /api/orders/recent -> 200 (13 ms) user=cashier1
+2026-11-02 17:11:30,561 | INFO    | grain.api | [3498c9ca] GET /api/inventory -> 200 (10 ms) user=cashier1
+2026-11-02 17:11:39,658 | INFO    | grain.api | [92dc710a] GET /api/offers/available -> 200 (6 ms) user=cashier1
