@@ -26,9 +26,7 @@ grain_inventory_system/
 ## Setup
 
 1. **Database** (MySQL 8.0.16+):
-   * **New install:** `mysql -u root -p < grain_inventery.sql` (this *recreates* the tables - run it once)
-   * **Already have the first version?** Don't re-run that file. Run the upgrade instead, it keeps your data:
-     `mysql -u root -p grain_inventory < migrate_v2.sql`
+   * **Create Databse: create Database for as all command are stored in "grain_inventery.sql"
 2. **Settings**: copy `.env.example` to `.env` and set your MySQL password.
 3. **Install**: `python -m venv venv`, activate it, then `pip install -r requirements.txt`
 4. **Start the backend**: `cd backend_api && python app.py`
