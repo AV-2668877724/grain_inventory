@@ -26,13 +26,13 @@ grain_inventory_system/
 ## Setup
 
 1. **Database** (MySQL 8.0.16+):
-   * **Create Databse: create Database for as all command are stored in "grain_inventery.sql"
-2. **Settings**: copy `.env.example` to `.env` and set your MySQL password.
+   * **Create Database: create database for as all command are stored in "grain_inventery.sql"
+2. **Settings**: copy  `.env` and set your MySQL password.
 3. **Install**: `python -m venv venv`, activate it, then `pip install -r requirements.txt`
 4. **Start the backend**: `cd backend_api && python app.py`
    (on first start it creates the default users below)
 5. **Start the frontend** (new terminal): `cd frontend_ui && streamlit run main.py`
-6. *(Optional)* demo data for analytics: `cd backend_api && python seed_demo.py`
+6. *(Optional)* demo data for analytics: `cd backend_api && python seed_demo.py`  (Do it once)
 
 ## First login (change these passwords in Owner Dashboard → Manage → Staff accounts)
 
