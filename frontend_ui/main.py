@@ -7,8 +7,10 @@ import hashlib
 import logging
 import os
 import secrets
+import time
 
 import mysql.connector
+from mysql.connector import pooling
 from fastapi import Depends, FastAPI, Header, HTTPException
 from pydantic import BaseModel, Field
 
@@ -26,18 +28,36 @@ app = FastAPI(title="Grain Store API")
 SESSIONS = {}  # token -> {"id":..., "username":..., "role":...}   (kept in memory; restart = log in again)
 
 
-def run(sql, params=(), many=False):
-    """Run one SQL query. SELECT returns a list of dicts, other queries return the new id."""
+POOL = None
+PRODUCTS_VERSION = int(time.time())  # goes up every time products/prices/stock change; cashier screens watch it
+
+
+def bump():
+    global PRODUCTS_VERSION
+    PRODUCTS_VERSION += 1
+
+
+def get_conn():
+    """Connections are re-used from a pool (much faster than opening a new one for every query)."""
+    global POOL
     try:
-        conn = mysql.connector.connect(**DB)
+        if POOL is None:
+            POOL = pooling.MySQLConnectionPool(pool_name="grain", pool_size=8, **DB)
+        return POOL.get_connection()
     except mysql.connector.Error:
         log.exception("database connection failed")
         raise HTTPException(503, "Cannot reach the database. Is MySQL running?")
+
+
+def run(sql, params=(), many=False):
+    """Run one SQL query. SELECT returns a list of dicts, other queries return the new id."""
+    conn = get_conn()
     try:
         cur = conn.cursor(dictionary=True)
         cur.execute(sql, params)
         if sql.strip().upper().startswith("SELECT"):
             rows = cur.fetchall()
+            conn.commit()  # end the read, so this pooled connection sees fresh data next time
             return [{k: (float(v) if hasattr(v, "as_tuple") else v) for k, v in r.items()} for r in rows]
         conn.commit()
         return cur.lastrowid
@@ -85,6 +105,12 @@ class NewProduct(BaseModel):
     stock: float = Field(ge=0)
 
 
+@app.get("/products/version")
+def products_version(user=Depends(current_user)):
+    """Tiny call the cashier screen repeats every few seconds to learn whether products/prices changed."""
+    return {"version": PRODUCTS_VERSION}
+
+
 @app.get("/products")
 def products(user=Depends(current_user)):
     return run("SELECT * FROM products ORDER BY name")
@@ -97,6 +123,7 @@ def add_product(p: NewProduct, user=Depends(owner_only)):
                   (p.name.strip(), p.category.strip(), p.price, p.stock))
     except mysql.connector.IntegrityError:
         raise HTTPException(400, "A product with this name already exists.")
+    bump()
     log.info("%s added product %s", user["username"], p.name)
     return {"id": pid}
 
@@ -108,14 +135,32 @@ class Restock(BaseModel):
 @app.post("/products/{pid}/restock")
 def restock(pid: int, r: Restock, user=Depends(owner_only)):
     run("UPDATE products SET stock = stock + %s WHERE id=%s", (r.qty, pid))
+    bump()
     log.info("%s restocked product %s by %s", user["username"], pid, r.qty)
     return {"ok": True}
+
+
+class NewPrice(BaseModel):
+    price: float = Field(gt=0)
+
+
+@app.put("/products/{pid}/price")
+def change_price(pid: int, body: NewPrice, user=Depends(owner_only)):
+    """Owner changes a price. Takes effect at once; old bills keep the price they were sold at."""
+    old = run("SELECT name, price FROM products WHERE id=%s", (pid,))
+    if not old:
+        raise HTTPException(404, "Product not found.")
+    run("UPDATE products SET price=%s WHERE id=%s", (body.price, pid))
+    bump()
+    log.info("%s changed price of %s from %s to %s", user["username"], old[0]["name"], old[0]["price"], body.price)
+    return {"ok": True, "name": old[0]["name"], "old": old[0]["price"], "new": body.price}
 
 
 # ---------------------------------------------------------------- billing
 class Item(BaseModel):
     product_id: int
     qty: float = Field(gt=0)
+    price: float | None = None  # the price the cashier saw; if the owner changed it meanwhile, the bill is refused
 
 
 class NewBill(BaseModel):
@@ -126,10 +171,7 @@ class NewBill(BaseModel):
 @app.post("/bills")
 def create_bill(bill: NewBill, user=Depends(current_user)):
     """Checks stock, saves the bill and reduces the stock - all or nothing."""
-    try:
-        conn = mysql.connector.connect(**DB)
-    except mysql.connector.Error:
-        raise HTTPException(503, "Cannot reach the database. Is MySQL running?")
+    conn = get_conn()
     try:
         cur = conn.cursor(dictionary=True)
         lines, total = [], 0.0
@@ -138,6 +180,8 @@ def create_bill(bill: NewBill, user=Depends(current_user)):
             p = cur.fetchone()
             if not p:
                 raise HTTPException(404, "Product not found.")
+            if it.price is not None and abs(float(p["price"]) - it.price) > 0.001:
+                raise HTTPException(409, f"Price of {p['name']} just changed to ₹{float(p['price']):g}/kg. Please review the bill.")
             if float(p["stock"]) < it.qty:
                 raise HTTPException(400, f"Only {float(p['stock']):g} kg of {p['name']} in stock.")
             amount = round(float(p["price"]) * it.qty, 2)
@@ -150,6 +194,7 @@ def create_bill(bill: NewBill, user=Depends(current_user)):
             cur.execute("INSERT INTO bill_items (bill_id, product_id, qty, price) VALUES (%s,%s,%s,%s)", (bill_id, pid, qty, price))
             cur.execute("UPDATE products SET stock = stock - %s WHERE id=%s", (qty, pid))
         conn.commit()
+        bump()
     except HTTPException:
         conn.rollback()
         raise
